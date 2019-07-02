@@ -2,6 +2,7 @@ import React ,{Component} from 'react';
 import PropTypes from 'prop-types';
 import _ from 'underscore';
 import escapeRegex from 'escape-string-regexp';
+import { Link } from "react-router-dom";
 
 
 class ListContacts extends Component {
@@ -32,6 +33,7 @@ class ListContacts extends Component {
 
         let showingContacts = [];
 
+        //Filter the contacts
         if(query){
             const pattern = new RegExp(escapeRegex(query),'i');
             showingContacts = contacts.filter( (item) => pattern.test(item.name + item.email))
@@ -51,6 +53,12 @@ class ListContacts extends Component {
                         value = {query}
                         onChange = {(event) => this.updateQuery(event.target.value)}
                     />
+
+                    <Link
+                    to="/create"
+                    className="add-contact"
+                    >Add Contact
+                    </Link>
                 </div>
                 
                 {   showingContacts.length !== contacts.length && ( 
