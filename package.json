@@ -11,7 +11,7 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "0.9.x",
     "sort-by": "^1.2.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {},
   "scripts": {
